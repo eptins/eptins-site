@@ -31,7 +31,8 @@ export default function ContactFormClient(){
       <input name="phone" placeholder="Phone / WhatsApp" style={field}/>
       <select name="service" style={field}>
         <option value="">What do you need?</option>
-        <option>Websites</option><option>eCommerce</option><option>Performance SEO</option><option>Growth Ads</option>
+        <option>Websites</option><option>eCommerce</option>
+        <option>Performance SEO</option><option>Growth Ads</option>
       </select>
       <textarea name="notes" placeholder="Anything we should know?" rows={5} style={area}/>
       <input type="text" name="hp" style={{display:'none'}} tabIndex={-1} autoComplete="off" />
