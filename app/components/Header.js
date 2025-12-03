@@ -17,6 +17,7 @@ export default function Header(){
         <nav style={{display:'flex',gap:24,alignItems:'center'}}>
           <Link href="/work">Work</Link>
           <Link href="/services">Services</Link>
+          <Link href="/ads-reporting">Ads reporting</Link>
           <Link href="/contact">Contact</Link>
           <Link href="/contact" className="btn">Start a project</Link>
         </nav>
