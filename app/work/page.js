@@ -1,22 +1,28 @@
-
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Link from 'next/link'
-import { cases } from '../lib/cases'
+import { products } from '../lib/cases'
 
-export const metadata = { title:'Work' }
+export const metadata = { title:'Lookbook — Bae & Boo' }
 
 export default function Work(){
   return (<>
     <Header/>
     <section className="section"><div className="container">
-      <h1 className="h2">Selected work</h1>
-      <div className="grid grid-3">
-        {cases.map(c=>(
-          <Link href={`/work/${c.slug}`} key={c.slug} className="card" style={{padding:24}}>
-            <div style={{height:160,background:'rgba(255,255,255,.06)',border:'1px solid rgba(255,255,255,.08)',borderRadius:12,marginBottom:12}}/>
-            <div style={{fontWeight:700,marginBottom:6}}>{c.title}</div>
-            <div className="p" style={{margin:0}}>{c.summary}</div>
+      <div className="eyebrow">Lookbook</div>
+      <h1 className="h1">The couple edit.</h1>
+      <p className="p" style={{marginTop:22}}>Shop coordinated outfits curated by occasion, fabric story, and shared mood.</p>
+    </div></section>
+    <section className="section light" style={{paddingTop:0}}><div className="container">
+      <div className="grid grid-4">
+        {products.map(product=>(
+          <Link href={`/work/${product.slug}`} key={product.slug} className="product-card">
+            <div className="product-visual" style={{'--swatch':product.gradient}}/>
+            <div className="product-body">
+              <div className="product-meta"><span className="badge">{product.category}</span><span className="price">{product.price}</span></div>
+              <h2 className="product-title">{product.title}</h2>
+              <p className="light p" style={{margin:0}}>{product.summary}</p>
+            </div>
           </Link>
         ))}
       </div>

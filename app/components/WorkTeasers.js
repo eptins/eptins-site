@@ -1,23 +1,26 @@
-
 import Link from 'next/link'
-
-const cards = [
-  { slug:'maga-floors', title:'Maga Floors — WordPress Catalog', line:'A fast, elegant catalog for multi-brand flooring.' },
-  { slug:'dr-alice-dental', title:'Dr. Alice Dental — Local SEO & Leads', line:'Intent-led pages + local SEO for steady enquiries.' },
-  { slug:'blizz-infrared-sauna', title:'Blizz Infrared Sauna — High-Ticket Leads', line:'Quality B2C/B2B enquiries on lean spend.' }
-]
+import { products } from '../lib/cases'
 
 export default function WorkTeasers(){
   return (
-    <section className="section">
+    <section className="section light" id="shop">
       <div className="container">
-        <h2 className="h2">Selected work</h2>
-        <div className="grid grid-3">
-          {cards.map(c=>(
-            <Link key={c.slug} href={`/work/${c.slug}`} className="card" style={{padding:24}}>
-              <div style={{height:160,background:'rgba(255,255,255,.06)',border:'1px solid rgba(255,255,255,.08)',borderRadius:12,marginBottom:12}}/>
-              <div style={{fontWeight:700,marginBottom:6}}>{c.title}</div>
-              <div className="p" style={{margin:0}}>{c.line}</div>
+        <div style={{display:'flex',justifyContent:'space-between',gap:24,alignItems:'end',marginBottom:28,flexWrap:'wrap'}}>
+          <div>
+            <div className="eyebrow" style={{color:'var(--rose-deep)'}}>The first drop</div>
+            <h2 className="h2">Couple sets made for your shared calendar.</h2>
+          </div>
+          <Link href="/work" className="btn dark">View all looks</Link>
+        </div>
+        <div className="grid grid-4">
+          {products.map(product=>(
+            <Link href={`/work/${product.slug}`} key={product.slug} className="product-card">
+              <div className="product-visual" style={{'--swatch':product.gradient}}/>
+              <div className="product-body">
+                <div className="product-meta"><span className="badge">{product.category}</span><span className="price">{product.price}</span></div>
+                <h3 className="product-title">{product.title}</h3>
+                <p className="light p" style={{margin:0}}>{product.summary}</p>
+              </div>
             </Link>
           ))}
         </div>

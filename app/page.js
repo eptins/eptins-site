@@ -1,4 +1,3 @@
-
 import AnniversaryRibbon from './components/AnniversaryRibbon'
 import Header from './components/Header'
 import Hero from './components/Hero'
@@ -15,8 +14,8 @@ export default function Home(){
     <AnniversaryRibbon/>
     <Header/>
     <Hero/>
-    <section className="section"><div className="container">
-      <div className="p" style={{marginBottom:16,opacity:.9}}>Trusted by brands in India & the US</div>
+    <section className="section" style={{paddingTop:20,paddingBottom:44}}><div className="container">
+      <div className="p" style={{marginBottom:16,opacity:.9}}>Designed for couples who want coordinated style without compromise.</div>
       <TrustRow/>
     </div></section>
     <WorkTeasers/>
